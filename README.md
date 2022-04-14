@@ -1,7 +1,6 @@
 # kasm-hackbox
 
-> [!attention]
-> Work in progress! Not ready for production...
+> Attention: Work in progress! Not ready for production...
 
 Hack-the-Box ready Docker Image for KASM Workspaces, based on Ubuntu Core maintained by KASM Tech
 
