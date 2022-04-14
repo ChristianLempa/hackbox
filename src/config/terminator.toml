@@ -1,0 +1,3 @@
+[global_config]
+use_system_font = false
+font = "Hack Nerd Font 16"
