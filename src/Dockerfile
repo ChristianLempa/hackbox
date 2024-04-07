@@ -1,4 +1,4 @@
-FROM kasmweb/core-ubuntu-bionic:1.10.0
+FROM kasmweb/ubuntu-focal-desktop:1.15.0
 USER root
 
 ENV HOME /home/kasm-default-profile
@@ -32,13 +32,6 @@ COPY config/starship.toml .config/starship.toml
 RUN wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
 RUN unzip Hack.zip -d /usr/local/share/fonts
 
-# Install Terminator
-RUN apt -y install terminator
-
-# Set up Nerd font in Terminator
-RUN mkdir .config/terminator
-COPY config/terminator.toml .config/terminator/config
-
 # Install XFCE Dark Theme
 RUN apt install numix-gtk-theme
 
@@ -51,3 +44,5 @@ RUN $STARTUPDIR/set_user_permission.sh $HOME
 ENV HOME /home/kasm-user
 WORKDIR $HOME
 RUN mkdir -p $HOME && chown -R 1000:0 $HOME
+
+USER 1000
